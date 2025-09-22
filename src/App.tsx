@@ -23,7 +23,7 @@ function App() {
       {/* Orb Background - Fixed */}
       <div className="w-full h-screen fixed inset-0">
         <Orb
-          hoverIntensity={0.5}
+          hoverIntensity={2}
           rotateOnHover={true}
           hue={0}
           forceHoverState={false}
