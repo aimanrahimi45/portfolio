@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface PortfolioSectionProps {
-  title: string;
+  title: React.ReactNode;
   subtitle: string;
   id: string;
   children?: React.ReactNode;

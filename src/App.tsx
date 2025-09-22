@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Orb from './components/Orb';
 import GlassSurfaceGooeyNav from './components/GlassSurfaceGooeyNav';
 import ScrollStacking from './components/ScrollStacking';
+import ScrollFloat from './components/ScrollFloat';
 import PortfolioSection from './components/PortfolioSection';
 import Lanyard from './components/Lanyard';
 import './App.css';
@@ -42,7 +43,11 @@ function App() {
         <ScrollStacking>
           <PortfolioSection
             id="home"
-            title="Welcome to My Portfolio"
+            title={
+              <ScrollFloat>
+                Welcome to My Portfolio
+              </ScrollFloat>
+            }
             subtitle="Creative Developer & Designer"
           >
             <div className="mt-8 relative z-20">
@@ -64,7 +69,11 @@ function App() {
         <ScrollStacking>
           <PortfolioSection
             id="about"
-            title="About Me"
+            title={
+              <ScrollFloat animationDuration={1.2} stagger={0.05}>
+                About Me
+              </ScrollFloat>
+            }
             subtitle="Passionate about technology and design"
           >
             <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -94,7 +103,11 @@ function App() {
         <ScrollStacking>
           <PortfolioSection
             id="project"
-            title="My Projects"
+            title={
+              <ScrollFloat animationDuration={1.1} stagger={0.04}>
+                My Projects
+              </ScrollFloat>
+            }
             subtitle="Showcase of recent work"
           >
             <div className="grid md:grid-cols-3 gap-6 mt-12">
@@ -114,7 +127,11 @@ function App() {
         <ScrollStacking>
           <PortfolioSection
             id="contact"
-            title="Get In Touch"
+            title={
+              <ScrollFloat animationDuration={1.3} stagger={0.06}>
+                Get In Touch
+              </ScrollFloat>
+            }
             subtitle="Let's work together"
           >
             <div className="mt-8">
