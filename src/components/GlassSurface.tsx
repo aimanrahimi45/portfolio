@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useId } from 'react';
+import React, { useEffect, useRef, useId, useCallback } from 'react';
 import './GlassSurface.css';
 
 export interface GlassSurfaceProps {
@@ -76,10 +76,10 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
   const blueChannelRef = useRef<SVGFEDisplacementMapElement>(null);
   const gaussianBlurRef = useRef<SVGFEGaussianBlurElement>(null);
 
-  const generateDisplacementMap = () => {
+  const updateDisplacementMap = useCallback(() => {
     const rect = containerRef.current?.getBoundingClientRect();
-    const actualWidth = rect?.width || 400;
-    const actualHeight = rect?.height || 200;
+    const actualWidth = rect?.width || (typeof width === 'number' ? width : 400);
+    const actualHeight = rect?.height || (typeof height === 'number' ? height : 200);
     const edgeSize = Math.min(actualWidth, actualHeight) * (borderWidth * 0.5);
 
     const svgContent = `
@@ -101,12 +101,20 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
       </svg>
     `;
 
-    return `data:image/svg+xml,${encodeURIComponent(svgContent)}`;
-  };
-
-  const updateDisplacementMap = () => {
-    feImageRef.current?.setAttribute('href', generateDisplacementMap());
-  };
+    const dataUrl = `data:image/svg+xml,${encodeURIComponent(svgContent)}`;
+    feImageRef.current?.setAttribute('href', dataUrl);
+  }, [
+    width,
+    height,
+    borderRadius,
+    borderWidth,
+    brightness,
+    opacity,
+    blur,
+    mixBlendMode,
+    redGradId,
+    blueGradId
+  ]);
 
   useEffect(() => {
     updateDisplacementMap();
@@ -138,9 +146,9 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     blueOffset,
     xChannel,
     yChannel,
-    mixBlendMode
+    mixBlendMode,
+    updateDisplacementMap
   ]);
-
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -153,25 +161,11 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({
     return () => {
       resizeObserver.disconnect();
     };
-  }, []);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const resizeObserver = new ResizeObserver(() => {
-      setTimeout(updateDisplacementMap, 0);
-    });
-
-    resizeObserver.observe(containerRef.current);
-
-    return () => {
-      resizeObserver.disconnect();
-    };
-  }, []);
+  }, [updateDisplacementMap]);
 
   useEffect(() => {
     setTimeout(updateDisplacementMap, 0);
-  }, [width, height]);
+  }, [width, height, updateDisplacementMap]);
 
   const supportsSVGFilters = () => {
     const isWebkit = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);

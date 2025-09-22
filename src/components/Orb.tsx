@@ -222,31 +222,41 @@ export default function Orb({
     let currentRot = 0;
     const rotationSpeed = 0.3;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    // Make the WebGL canvas ignore mouse events
+    gl.canvas.style.pointerEvents = 'none';
+    
+    // Use document-level mouse events to detect orb hover
+    const handleDocumentMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      const width = rect.width;
-      const height = rect.height;
-      const size = Math.min(width, height);
-      const centerX = width / 2;
-      const centerY = height / 2;
-      const uvX = ((x - centerX) / size) * 2.0;
-      const uvY = ((y - centerY) / size) * 2.0;
+      
+      // Only process if mouse is within orb container bounds
+      if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+        const width = rect.width;
+        const height = rect.height;
+        const size = Math.min(width, height);
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const uvX = ((x - centerX) / size) * 2.0;
+        const uvY = ((y - centerY) / size) * 2.0;
 
-      if (Math.sqrt(uvX * uvX + uvY * uvY) < 0.8) {
-        targetHover = 1;
+        if (Math.sqrt(uvX * uvX + uvY * uvY) < 0.8) {
+          targetHover = 1;
+        } else {
+          targetHover = 0;
+        }
       } else {
         targetHover = 0;
       }
     };
 
-    const handleMouseLeave = () => {
+    const handleDocumentMouseLeave = () => {
       targetHover = 0;
     };
 
-    container.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mousemove', handleDocumentMouseMove);
+    document.addEventListener('mouseleave', handleDocumentMouseLeave);
 
     let rafId: number;
     const update = (t: number) => {
@@ -272,12 +282,12 @@ export default function Orb({
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener('resize', resize);
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mousemove', handleDocumentMouseMove);
+      document.removeEventListener('mouseleave', handleDocumentMouseLeave);
       container.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-  }, [hue, hoverIntensity, rotateOnHover, forceHoverState]);
+  }, [hue, hoverIntensity, rotateOnHover, forceHoverState, frag, vert]);
 
   return <div ref={ctnDom} className="orb-container" />;
 }
