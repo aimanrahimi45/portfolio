@@ -5,6 +5,7 @@ import Orb from './components/Orb';
 import GlassSurfaceGooeyNav from './components/GlassSurfaceGooeyNav';
 import ScrollStacking from './components/ScrollStacking';
 import PortfolioSection from './components/PortfolioSection';
+import Lanyard from './components/Lanyard';
 import './App.css';
 
 // Register ScrollTrigger plugin
@@ -44,13 +45,17 @@ function App() {
             title="Welcome to My Portfolio"
             subtitle="Creative Developer & Designer"
           >
-            <div className="mt-8">
+            <div className="mt-8 relative z-20">
               <p className="text-lg text-gray-400 mb-6">
                 Crafting beautiful digital experiences with modern technologies
               </p>
               <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
                 View My Work
               </button>
+            </div>
+            {/* Lanyard Animation */}
+            <div className="absolute inset-0 z-10 opacity-70">
+              <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
             </div>
           </PortfolioSection>
         </ScrollStacking>
