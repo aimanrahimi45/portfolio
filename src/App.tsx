@@ -53,8 +53,8 @@ function App() {
                 View My Work
               </button>
             </div>
-            {/* Lanyard Animation */}
-            <div className="absolute inset-0 z-10 opacity-70">
+            {/* Lanyard Animation - Full width container for physics boundaries */}
+            <div className="absolute inset-0 z-10 opacity-70 overflow-visible">
               <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
             </div>
           </PortfolioSection>

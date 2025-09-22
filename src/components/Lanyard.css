@@ -1,11 +1,16 @@
 .lanyard-wrapper {
-  position: relative;
+  position: absolute;
   z-index: 0;
-  width: 100%;
+  top: 0;
+  right: 0;
+  width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transform: scale(1);
   transform-origin: center;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.lanyard-wrapper canvas {
+  pointer-events: auto;
 }
