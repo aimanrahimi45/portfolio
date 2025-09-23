@@ -70,8 +70,9 @@ function App() {
               </ScrollFloat>
             }
             subtitle="Passionate about technology and design"
+            fullWidth={true}
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full">
               {/* Top Row - Collaboration Card (2 columns) */}
               <div className="md:col-span-2 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
                 <div className="flex items-start space-x-4">

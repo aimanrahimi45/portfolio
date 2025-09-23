@@ -5,17 +5,19 @@ interface PortfolioSectionProps {
   subtitle: string;
   id: string;
   children?: React.ReactNode;
+  fullWidth?: boolean;
 }
 
-const PortfolioSection: React.FC<PortfolioSectionProps> = ({ 
-  title, 
-  subtitle, 
-  id, 
-  children 
+const PortfolioSection: React.FC<PortfolioSectionProps> = ({
+  title,
+  subtitle,
+  id,
+  children,
+  fullWidth = false
 }) => {
   return (
     <div id={id} className="min-h-screen flex items-center justify-center p-8">
-      <div className="text-center max-w-4xl mx-auto">
+      <div className={fullWidth ? "text-center w-full" : "text-center max-w-4xl mx-auto"}>
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
           {title}
         </h2>
