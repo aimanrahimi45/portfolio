@@ -6,7 +6,6 @@ import GlassSurfaceGooeyNav from './components/GlassSurfaceGooeyNav';
 import ScrollStacking from './components/ScrollStacking';
 import ScrollFloat from './components/ScrollFloat';
 import PortfolioSection from './components/PortfolioSection';
-import Lanyard from './components/Lanyard';
 import './App.css';
 
 // Register ScrollTrigger plugin
@@ -57,10 +56,6 @@ function App() {
               <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
                 View My Work
               </button>
-            </div>
-            {/* Lanyard Animation - Full width container for physics boundaries */}
-            <div className="absolute inset-0 z-10 opacity-70 overflow-visible">
-              <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
             </div>
           </PortfolioSection>
         </ScrollStacking>
