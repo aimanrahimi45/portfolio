@@ -6,6 +6,7 @@ import GlassSurfaceGooeyNav from './components/GlassSurfaceGooeyNav';
 import ScrollStacking from './components/ScrollStacking';
 import ScrollFloat from './components/ScrollFloat';
 import PortfolioSection from './components/PortfolioSection';
+import DiamondPattern from './components/DiamondPattern';
 import './App.css';
 
 // Register ScrollTrigger plugin
@@ -74,21 +75,14 @@ function App() {
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full">
               {/* Top Row - Collaboration Card (2 columns) */}
-              <div className="md:col-span-2 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg shadow-purple-500/30">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Collaboration</h3>
-                    <p className="text-gray-300 text-lg">
-                      I prioritize client collaboration, fostering open communication
-                    </p>
-                  </div>
+              <div className="md:col-span-2 bg-gray-900/50 backdrop-blur-lg rounded-2xl border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden">
+                {/* Diamond Pattern Background */}
+                <div className="absolute inset-0 opacity-50 pointer-events-none">
+                  <DiamondPattern />
+                </div>
+                {/* Content with padding */}
+                <div className="p-6">
+                  {/* Card content goes here */}
                 </div>
               </div>
 

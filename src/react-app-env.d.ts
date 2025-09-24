@@ -1,12 +1,8 @@
 /// <reference types="react-scripts" />
 
-declare module '*.glb';
-declare module '*.png';
-
-// Extend JSX namespace for meshline components
-declare namespace JSX {
-  interface IntrinsicElements {
-    meshLineGeometry: any;
-    meshLineMaterial: any;
-  }
+declare module "*.svg" {
+  import * as React from "react";
+  export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement> & { title?: string }>;
+  const src: string;
+  export default src;
 }
