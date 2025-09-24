@@ -73,21 +73,176 @@ function App() {
             subtitle="Passionate about technology and design"
             fullWidth={true}
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full auto-rows-auto">
               {/* Top Row - Collaboration Card (2 columns) */}
-              <div className="md:col-span-2 bg-gray-900/50 backdrop-blur-lg rounded-2xl border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden">
+              <div className="md:col-span-2 bg-gray-900/50 backdrop-blur-lg rounded-2xl border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden" style={{ height: '300px' }}>
                 {/* Diamond Pattern Background */}
                 <div className="absolute inset-0 opacity-50 pointer-events-none">
                   <DiamondPattern />
                 </div>
                 {/* Content with padding */}
-                <div className="p-6">
-                  {/* Card content goes here */}
+                <div className="p-6 relative z-10">
+                  {/* Profile image placeholder circles with individual diameter configuration */}
+                  {(() => {
+                    // Individual diameter parameters for each circle - adjust as needed
+                    const diameter1 = 50;  // Circle 1 diameter
+                    const diameter2 = 70;  // Circle 2 diameter
+                    const diameter3 = 140; // Circle 3 diameter
+                    const diameter4 = 80;  // Circle 4 diameter
+                    const diameter5 = 40;  // Circle 5 diameter
+                    const diameter6 = 60;  // Circle 6 diameter
+                    
+                    // Individual diameter parameters for each foreground circle - adjust as needed
+                    const foregroundDiameter1 = 40;  // Circle 1 foreground diameter
+                    const foregroundDiameter2 = 60;  // Circle 2 foreground diameter
+                    const foregroundDiameter3 = 130;  // Circle 3 foreground diameter
+                    const foregroundDiameter4 = 70;  // Circle 4 foreground diameter
+                    const foregroundDiameter5 = 30;  // Circle 5 foreground diameter
+                    const foregroundDiameter6 = 50;  // Circle 6 foreground diameter
+                    
+                    return (
+                      <>
+                        {/* Circle 1 */}
+                        <div
+                          className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border-4 border-white/20"
+                          style={{
+                            width: `${diameter1}px`,
+                            height: `${diameter1}px`,
+                            position: 'absolute',
+                            top: '20px',    // Adjust this value to change vertical position
+                            left: '740px'    // Adjust this value to change horizontal position
+                          }}
+                        >
+                          <div className="bg-gray-200 border-2 border-dashed rounded-full flex items-center justify-center text-gray-500"
+                            style={{
+                              width: `${foregroundDiameter1}px`,  // Adjust this value to change foreground circle diameter
+                              height: `${foregroundDiameter1}px`  // Adjust this value to change foreground circle diameter
+                            }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-1/2 w-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                        
+                        {/* Circle 2 */}
+                        <div
+                          className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border-4 border-white/20"
+                          style={{
+                            width: `${diameter2}px`,
+                            height: `${diameter2}px`,
+                            position: 'absolute',
+                            top: '20px',    // Adjust this value to change vertical position
+                            left: '260px'   // Adjust this value to change horizontal position
+                          }}
+                        >
+                          <div className="bg-gray-200 border-2 border-dashed rounded-full flex items-center justify-center text-gray-500"
+                            style={{
+                              width: `${foregroundDiameter2}px`,  // Adjust this value to change foreground circle diameter
+                              height: `${foregroundDiameter2}px`  // Adjust this value to change foreground circle diameter
+                            }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-1/2 w-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                        
+                        {/* Circle 3 */}
+                        <div
+                          className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border-4 border-white/20"
+                          style={{
+                            width: `${diameter3}px`,
+                            height: `${diameter3}px`,
+                            position: 'absolute',
+                            top: '90px',   // Adjust this value to change vertical position
+                            left: '400px'    // Adjust this value to change horizontal position
+                          }}
+                        >
+                          <div className="bg-gray-200 border-2 border-dashed rounded-full flex items-center justify-center text-gray-500"
+                            style={{
+                              width: `${foregroundDiameter3}px`,  // Adjust this value to change foreground circle diameter
+                              height: `${foregroundDiameter3}px`  // Adjust this value to change foreground circle diameter
+                            }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-1/2 w-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                        
+                        {/* Circle 4 */}
+                        <div
+                          className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border-4 border-white/20"
+                          style={{
+                            width: `${diameter4}px`,
+                            height: `${diameter4}px`,
+                            position: 'absolute',
+                            top: '190px',   // Adjust this value to change vertical position
+                            left: '600px'   // Adjust this value to change horizontal position
+                          }}
+                        >
+                          <div className="bg-gray-200 border-2 border-dashed rounded-full flex items-center justify-center text-gray-500"
+                            style={{
+                              width: `${foregroundDiameter4}px`,  // Adjust this value to change foreground circle diameter
+                              height: `${foregroundDiameter4}px`  // Adjust this value to change foreground circle diameter
+                            }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-1/2 w-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                        
+                        {/* Circle 5 */}
+                        <div
+                          className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border-4 border-white/20"
+                          style={{
+                            width: `${diameter5}px`,
+                            height: `${diameter5}px`,
+                            position: 'absolute',
+                            top: '30px',   // Adjust this value to change vertical position
+                            left: '20px'    // Adjust this value to change horizontal position
+                          }}
+                        >
+                          <div className="bg-gray-200 border-2 border-dashed rounded-full flex items-center justify-center text-gray-500"
+                            style={{
+                              width: `${foregroundDiameter5}px`,  // Adjust this value to change foreground circle diameter
+                              height: `${foregroundDiameter5}px`  // Adjust this value to change foreground circle diameter
+                            }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-1/2 w-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                        
+                        {/* Circle 6 */}
+                        <div
+                          className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30 border-4 border-white/20"
+                          style={{
+                            width: `${diameter6}px`,
+                            height: `${diameter6}px`,
+                            position: 'absolute',
+                            top: '200px',   // Adjust this value to change vertical position
+                            left: '230px'   // Adjust this value to change horizontal position
+                          }}
+                        >
+                          <div className="bg-gray-200 border-2 border-dashed rounded-full flex items-center justify-center text-gray-500"
+                            style={{
+                              width: `${foregroundDiameter6}px`,  // Adjust this value to change foreground circle diameter
+                              height: `${foregroundDiameter6}px`  // Adjust this value to change foreground circle diameter
+                            }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-1/2 w-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })()}
+                  
+                  {/* Placeholder for additional circles - Add more circles here */}
                 </div>
               </div>
 
               {/* Top Row - Technology Stack Card (1 column) */}
-              <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300">
+              <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300" style={{ height: '250px' }}>
                 <h3 className="text-2xl font-bold text-white mb-4">Technology Stack</h3>
                 <div className="flex flex-wrap gap-2">
                   {['React', 'Next.js', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'MongoDB', 'AWS'].map((tech) => (
@@ -102,7 +257,7 @@ function App() {
               </div>
 
               {/* Second Row - Time Zone Card */}
-              <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
+              <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300" style={{ height: '200px' }}>
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4">
                     <div className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg shadow-purple-500/30 mx-auto">
@@ -119,7 +274,7 @@ function App() {
               </div>
 
               {/* Second Row - Contact Card */}
-              <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300">
+              <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300" style={{ height: '250px' }}>
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4">
                     <div className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg shadow-purple-500/30 mx-auto">
@@ -139,7 +294,7 @@ function App() {
               </div>
 
               {/* Second Row - Website Showcase Card */}
-              <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300">
+              <div className="bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300" style={{ height: '200px' }}>
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4">
                     <div className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg w-16 h-16 flex items-center justify-center shadow-lg shadow-purple-500/30 mx-auto">
@@ -156,7 +311,7 @@ function App() {
               </div>
 
               {/* Bottom Row - Project Status Card (Full Width) */}
-              <div className="md:col-span-3 bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
+              <div className="md:col-span-3 bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300" style={{ height: '150px' }}>
                 <div className="flex items-center justify-center space-x-4">
                   <div className="flex-shrink-0">
                     <div className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg shadow-purple-500/30">
