@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProjectStatusCard: React.FC = () => {
   return (
-    <div className="md:col-span-3 bg-gradient-to-r from-gray-900/70 to-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/30 shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300" style={{ height: '150px' }}>
+    <div className="md:col-span-3 backdrop-blur-lg rounded-2xl p-6 border-2 border-cyan-400 shadow-lg shadow-cyan-400/50 hover:shadow-xl hover:shadow-cyan-400/70 transition-all duration-300" style={{ height: '150px' }}>
       <div className="flex items-center justify-center space-x-4">
         <div className="flex-shrink-0">
           <div className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg shadow-purple-500/30">

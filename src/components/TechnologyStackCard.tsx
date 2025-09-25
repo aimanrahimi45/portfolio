@@ -4,7 +4,7 @@ const TechnologyStackCard: React.FC = () => {
   const technologies = ['React', 'Next.js', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'MongoDB', 'AWS'];
 
   return (
-    <div className="bg-gray-900/70 backdrop-blur-lg rounded-2xl p-6 border border-blue-500/20 shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300" style={{ height: '250px' }}>
+    <div className="backdrop-blur-lg rounded-2xl p-6 border-2 border-cyan-400 shadow-lg shadow-cyan-400/50 hover:shadow-xl hover:shadow-cyan-400/70 transition-all duration-300" style={{ height: '250px' }}>
       <h3 className="text-2xl font-bold text-white mb-4">Technology Stack</h3>
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech) => (

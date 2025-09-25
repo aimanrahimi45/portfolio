@@ -85,3 +85,12 @@
     transform: rotate(360deg);
   }
 }
+
+/* Inner glow effect for the collaboration card */
+.collaboration-card {
+  box-shadow: inset 0 0 10px rgba(34, 211, 238, 0.3);
+}
+
+.collaboration-card:hover {
+  box-shadow: inset 0 0 20px rgba(34, 211, 238, 0.7);
+}
