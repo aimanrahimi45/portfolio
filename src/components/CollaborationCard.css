@@ -1,0 +1,87 @@
+/* Initial state - hide all circles except circle 3 */
+.collaboration-card .circle-1,
+.collaboration-card .circle-2,
+.collaboration-card .circle-4,
+.collaboration-card .circle-5,
+.collaboration-card .circle-6 {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Fade out delays - reverse order */
+  transition-delay: 0.3s; /* Circle 5 */
+}
+
+.collaboration-card .circle-1 {
+  transition-delay: 0.25s;
+}
+
+.collaboration-card .circle-2 {
+  transition-delay: 0.15s;
+}
+
+.collaboration-card .circle-4 {
+  transition-delay: 0.1s;
+}
+
+.collaboration-card .circle-6 {
+  transition-delay: 0.2s;
+}
+
+/* Animation sequence for circles on hover */
+.collaboration-card:hover .circle-4 {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.1s;
+}
+
+.collaboration-card:hover .circle-2 {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.15s;
+}
+
+.collaboration-card:hover .circle-6 {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.2s;
+}
+
+.collaboration-card:hover .circle-1 {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.25s;
+}
+
+.collaboration-card:hover .circle-5 {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0.3s;
+}
+
+/* Shine effect for circle 3 */
+.collaboration-card:hover .circle-3-shine::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 90deg,
+    #ff1493 180deg, /* Magenta color */
+    transparent 270deg 360deg
+  );
+  animation: rotate 1.5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

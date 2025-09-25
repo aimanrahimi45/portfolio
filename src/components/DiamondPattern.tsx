@@ -8,6 +8,7 @@ interface DiamondPatternProps {
   zoom?: number; // New prop for manual zoom control
   rotation?: number; // New prop for rotation control
   animate?: boolean; // New prop for animation control
+  pathAnimate?: boolean; // New prop for path animation control
 }
 
 const DiamondPattern: React.FC<DiamondPatternProps> = ({
@@ -16,7 +17,8 @@ const DiamondPattern: React.FC<DiamondPatternProps> = ({
   height = '100%',
   zoom = 5, // Default zoom level
   rotation = 0, // Default rotation (0 degrees)
-  animate = false // Default animation state (false)
+  animate = false, // Default animation state (false)
+  pathAnimate = false // Default path animation state (false)
 }) => {
   // Calculate viewBox dimensions based on zoom level
   const viewBoxWidth = 800 / zoom;
@@ -27,8 +29,14 @@ const DiamondPattern: React.FC<DiamondPatternProps> = ({
   // Create rotation transform string
   const rotationTransform = `rotate(${rotation} 400 400)`;
 
-  // Add animation class if animate prop is true
-  const svgClassName = animate ? `${className} rotating-svg` : className;
+  // Add animation classes based on props
+  let svgClassName = className;
+  if (animate) {
+    svgClassName += ' rotating-svg';
+  }
+  if (pathAnimate) {
+    svgClassName += ' path-animation';
+  }
 
   return (
     <svg
