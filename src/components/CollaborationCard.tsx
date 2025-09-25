@@ -20,7 +20,7 @@ const CollaborationCard: React.FC = () => {
   };
 
   return (
-    <div className="md:col-span-2 backdrop-blur-lg rounded-2xl border-2 border-cyan-400 transition-all duration-300 relative overflow-hidden collaboration-card" style={{ height: '300px' }}>
+    <div className="md:col-span-2 backdrop-blur-lg rounded-2xl border-2 border-cyan-400 transition-all duration-300 relative overflow-hidden collaboration-card card-inner-glow" style={{ height: '300px' }}>
       {/* Diamond Pattern Background */}
       <div className="absolute inset-0 opacity-50 pointer-events-none">
         <DiamondPattern pathAnimate={true} />

@@ -1,8 +1,9 @@
 import React from 'react';
+import './CardInnerGlow.css';
 
 const ProjectStatusCard: React.FC = () => {
   return (
-    <div className="md:col-span-3 backdrop-blur-lg rounded-2xl p-6 border-2 border-cyan-400 shadow-lg shadow-cyan-400/50 hover:shadow-xl hover:shadow-cyan-400/70 transition-all duration-300" style={{ height: '150px' }}>
+    <div className="md:col-span-3 backdrop-blur-lg rounded-2xl p-6 border-2 border-cyan-400 card-inner-glow" style={{ height: '150px' }}>
       <div className="flex items-center justify-center space-x-4">
         <div className="flex-shrink-0">
           <div className="bg-gradient-to-br from-purple-500 to-blue-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg shadow-purple-500/30">
